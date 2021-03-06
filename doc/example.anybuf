@@ -1,0 +1,80 @@
+//import "fs";
+
+/**
+ * 基本类型: i8, i16, i32, i64, u8, u16, u32, u64, f32, f64, bool, str
+ * 复合类型: [], [,], <>, enum, struct
+ * 其他关键字: module
+ */
+
+/** 枚举1 */
+enum enum1/***/: u8 {
+    /** 第1 */
+    p1 = 1,
+    p2,//
+    // 1.1
+    p3 = 63,
+    p4 = 6,
+    p5,
+    p6 /**/ = /**22*/ 9,
+    p7,
+}
+/** 枚举2 */
+enum /***/enum2: u8 {
+    /** 第1 */
+    p1 = 123,
+}
+// 这是一个模块
+module example {
+    /** 枚举 */
+    enum enum1: u8 {
+        /** 第1 */
+        p1 = 1,
+        p2,//
+        // 1.1
+        p3,
+        p4,
+        p5,
+        p6 /****22*/ ,
+        p7,
+    }
+
+    /** 结构 */
+    struct struct1 {
+        p1:1 i8;
+        p2:2 i16;
+        p3:3 i32;
+        p4:4 i64;
+        p5:6 u8;
+        p6:20 u16;
+        p7:7 u32;
+        p8:8 u64;
+        p9:9 f32;
+        p10:10 f64;
+        p11?:11 bool;
+    }
+
+    struct struct2: struct1 {
+        p11:1 str;
+        p12:2 [i8[], f32];
+        p13:3 <i32, str>;
+    }
+
+    enum enum2: u8 {
+        p1 = 1,
+        p2,
+        p3,
+    }
+
+    struct struct3: struct2 {
+        p14:1 enum1;
+        p15:2 str[];
+        p16:3 [i8, f32][];
+        p17:4 <i32, str>[];
+
+        enum xyz {
+
+        }
+
+        p18:5 <xyz,i32>/**/[/**1*/];
+    }
+}
